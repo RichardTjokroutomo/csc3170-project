@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/static/css/bootstrap.css">
+    </head>
+
+        
+    <body class="">
+            <div class="container-fluid mt-5">
+                <div class="row justify-content-center">
+                    <div class="col-6">
+                        <div class="card" style="width: 36rem;">
+                            <div class="card-body">
+                               <!-- FORM STARTS -->
+                               <form action="/tool_mod" method="POST">
+                                <!-- title-->
+                                <div class="mb-3">
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="id"><b>ID</b></label>
+                                            <input type="text" class="form-control" id="id" name="id" placeholder="id" value="{{metadata[0]}}">
+                                        </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="name"><b>Name</b></label>
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="name" value="{{metadata[1]}}">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="item_desc"><b>Description</b></label>
+                                    <textarea class="form-control" id="item_desc" name="item_desc" rows="3" placeholder="item_desc">{{metadata[2]}}</textarea>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="item_url"><b>Image</b></label>
+                                    <input type="text" class="form-control" id="item_url" name="item_url" placeholder="item_url" value="{{metadata[3]}}">
+                                </div>
+
+                                
+                                
+                    
+                                <!-- edit-->
+                                <div class="row">
+                                    <button type="submit" class="btn btn-dark">Done</button>
+                                </div>
+        
+                                
+                              </form> 
+        
+                              <!-- delete-->
+                              <form action="tool_del?id={{metadata[0]}}" method="POST" class="mt-2">
+                                <div class="row">
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </div>
+                              </form>
+        
+                              <!-- FORM ENDS-->
+                              
+                            </div>
+                            
+                          </div>
+                    </div>
+                </div>
+            </div>
+
+        <script src="/static/js/bootstrap.js"></script>
+    </body>
+</html>

@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/static/css/bootstrap.css">
+    </head>
+
+        
+    <body class="">
+            <div class="container-fluid mt-5">
+                <div class="row justify-content-center">
+                    <div class="col-6">
+                        <div class="card" style="width: 36rem;">
+                            <div class="card-body">
+                               <!-- FORM STARTS -->
+                               <form action="/skill_mod" method="POST">
+                                <!-- title-->
+                                <div class="mb-3">
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="skillDmg_id"><b>ID</b></label>
+                                            <input type="text" class="form-control" id="skillDmg_id" name="skillDmg_id" placeholder="id" value="{{metadata[0]}}">
+                                        </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="skillDmg_name"><b>Name</b></label>
+                                    <input type="text" class="form-control" id="skillDmg_name" name="skillDmg_name" placeholder="skillDmg_name" value="{{metadata[1]}}">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="dmg"><b>Damage</b></label>
+                                    <input type="text" class="form-control" id="dmg" name="dmg" rows="3" placeholder="dmg" value="{{metadata[2]}}">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="sfx_addr"><b>Image URL</b></label>
+                                    <input type="text" class="form-control" id="sfx_addr" name="sfx_addr" placeholder="sfx_addr" value="{{metadata[3]}}">
+                                </div>
+
+                                
+
+                                
+                                <!-- edit-->
+                                <div class="row">
+                                    <button type="submit" class="btn btn-dark">Done</button>
+                                </div>
+        
+                                
+                              </form> 
+        
+                              <!-- delete-->
+                              <form action="skill_del?id={{metadata[0]}}" method="POST" class="mt-2">
+                                <div class="row">
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </div>
+                              </form>
+        
+                              <!-- FORM ENDS-->
+                              
+                            </div>
+                            
+                          </div>
+                    </div>
+                </div>
+            </div>
+
+        <script src="/static/js/bootstrap.js"></script>
+    </body>
+</html>

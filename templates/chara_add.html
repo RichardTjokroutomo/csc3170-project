@@ -1,0 +1,118 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/static/css/bootstrap.css">
+    </head>
+
+        
+    <body class="">
+            <div class="container-fluid mt-5">
+                <div class="row justify-content-center">
+                    <div class="col-6">
+                        <div class="card" style="width: 36rem;">
+                            <div class="card-body">
+                               <!-- FORM STARTS -->
+                               <form action="/chara_mod" method="POST">
+                                <!-- title-->
+                                <div class="mb-3">
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="id"><b>ID</b></label>
+                                            <input type="text" class="form-control" id="id" name="id" placeholder="id" value="{{metadata[0]}}">
+                                        </div>
+
+                                        <div class="col">
+                                            <label for="frag"><b>fragment ID</b></label>
+                                            <input type="text" class="form-control" id="frag" name="frag" placeholder="frag" value="{{metadata[10]}}">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="name"><b>Name</b></label>
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="name" value="{{metadata[2]}}">
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="avatar"><b>Avatar</b></label>
+                                            <input type="text" class="form-control" id="avatar" name="avatar" placeholder="avatar" value="{{metadata[3]}}">
+                                        </div>
+
+                                        <div class="col">
+                                            <label for="race"><b>Race</b></label>
+                                        <input type="text" class="form-control" id="race" name="race" placeholder="race" value="{{metadata[1]}}">
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="lihui"><b>立绘地址</b></label>
+                                            <input type="text" class="form-control" id="lihui" name="lihui" placeholder="立绘地址" value="{{metadata[4]}}">
+                                        </div>
+
+                                        <div class="col">
+                                            <label for="danju"><b>单局模型地址</b></label>
+                                            <input type="text" class="form-control" id="danju" name="danju" placeholder="单局模型地址" value="{{metadata[5]}}">
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+
+
+                                <div class="mb-3">
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="hp"><b>HP</b></label>
+                                            <input type="text" class="form-control" id="hp" name="hp" placeholder="hp" value="{{metadata[6]}}">
+                                        </div>
+
+                                        <div class="col">
+                                            <label for="atk"><b>ATK</b></label>
+                                            <input type="text" class="form-control" id="atk" name="atk" placeholder="atk" value="{{metadata[7]}}">
+                                        </div>
+
+                                        <div class="col">
+                                            <label for="spd"><b>SPD</b></label>
+                                            <input type="text" class="form-control" id="spd" name="spd" placeholder="spd" value="{{metadata[8]}}">
+                                        </div>
+
+                                        <div class="col">
+                                            <label for="rarity"><b>Rarity</b></label>
+                                            <input type="text" class="form-control" id="rarity" name="rarity" placeholder="rarity" value="{{metadata[9]}}">
+                                        </div>
+
+                                    </div>
+                                </div>
+                                
+                    
+                                <!-- edit-->
+                                <div class="row">
+                                    <button type="submit" class="btn btn-dark">Done</button>
+                                </div>
+        
+                                
+                              </form> 
+        
+                              <!-- delete-->
+                              <form action="chara_del?id={{metadata[0]}}" method="POST" class="mt-2">
+                                <div class="row">
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </div>
+                              </form>
+        
+                              <!-- FORM ENDS-->
+                              
+                            </div>
+                            
+                          </div>
+                    </div>
+                </div>
+            </div>
+
+        <script src="/static/js/bootstrap.js"></script>
+    </body>
+</html>

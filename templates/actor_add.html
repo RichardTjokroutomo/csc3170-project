@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/static/css/bootstrap.css">
+    </head>
+
+        
+    <body class="">
+            <div class="container-fluid mt-5">
+                <div class="row justify-content-center">
+                    <div class="col-6">
+                        <div class="card" style="width: 36rem;">
+                            <div class="card-body">
+                               <!-- FORM STARTS -->
+                               <form action="/actor_mod" method="POST">
+                                <!-- title-->
+                                <div class="mb-3">
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="skill_id"><b>Skill ID</b></label>
+                                            <input type="text" class="form-control" id="skill_id" name="skill_id" placeholder="skill_id" value="{{metadata[5]}}">
+                                        </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="chara_id"><b>Character ID</b></label>
+                                    <input type="text" class="form-control" id="chara_id" name="chara_id" placeholder="chara_id" value="{{metadata[0]}}">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="rarity"><b>Rarity</b></label>
+                                    <input type="text" class="form-control" id="rarity" name="rarity" placeholder="rarity" value="{{metadata[1]}}">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="skill_slot"><b>Number of Slots</b></label>
+                                    <input type="text" class="form-control" id="skill_slot" name="skill_slot" placeholder="skill_slot" value="{{metadata[2]}}">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="upgrade_id"><b>Upgrade ID</b></label>
+                                    <input type="text" class="form-control" id="upgrade_id" name="upgrade_id" placeholder="upgrade_id" value="{{metadata[3]}}">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="upgrade_cost"><b>Upgrade Cost</b></label>
+                                    <input type="text" class="form-control" id="upgrade_cost" name="upgrade_cost" placeholder="upgrade_cost" value="{{metadata[4]}}">
+                                </div>
+                                
+                    
+                                <!-- edit-->
+                                <div class="row">
+                                    <button type="submit" class="btn btn-dark">Done</button>
+                                </div>
+        
+                                
+                              </form> 
+        
+                              <!-- delete-->
+                              <form action="actor_del?id={{metadata[5]}}" method="POST" class="mt-2">
+                                <div class="row">
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </div>
+                              </form>
+        
+                              <!-- FORM ENDS-->
+                              
+                            </div>
+                            
+                          </div>
+                    </div>
+                </div>
+            </div>
+
+        <script src="/static/js/bootstrap.js"></script>
+    </body>
+</html>

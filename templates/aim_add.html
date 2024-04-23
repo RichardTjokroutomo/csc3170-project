@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/static/css/bootstrap.css">
+    </head>
+
+        
+    <body class="">
+            <div class="container-fluid mt-5">
+                <div class="row justify-content-center">
+                    <div class="col-6">
+                        <div class="card" style="width: 36rem;">
+                            <div class="card-body">
+                               <!-- FORM STARTS -->
+                               <form action="/aim_mod" method="POST">
+                                <!-- title-->
+                                <div class="mb-3">
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="aim_id"><b>ID</b></label>
+                                            <input type="text" class="form-control" id="aim_id" name="aim_id" placeholder="id" value="{{metadata[0]}}">
+                                        </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="aim_range"><b>Aim Range</b></label>
+                                    <input type="text" class="form-control" id="aim_range" name="aim_range" placeholder="aim_range" value="{{metadata[1]}}">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="show_wire"><b>Show Wire? (1/0)</b></label>
+                                    <input type="text" class="form-control" id="show_wire" name="show_wire" rows="3" placeholder="show_wire" value="{{metadata[2]}}">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="search_teammates"><b>Search Teammates? (1/0)</b></label>
+                                    <input type="text" class="form-control" id="search_teammates" name="search_teammates" placeholder="search_teammates" value="{{metadata[3]}}">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="ignore_block"><b>Ignore Block? (1/0)</b></label>
+                                    <input type="text" class="form-control" id="ignore_block" name="ignore_block" placeholder="ignore_block" value="{{metadata[4]}}">
+                                </div>
+
+                                
+                                <!-- edit-->
+                                <div class="row">
+                                    <button type="submit" class="btn btn-dark">Done</button>
+                                </div>
+        
+                                
+                              </form> 
+        
+                              <!-- delete-->
+                              <form action="aim_del?id={{metadata[0]}}" method="POST" class="mt-2">
+                                <div class="row">
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </div>
+                              </form>
+        
+                              <!-- FORM ENDS-->
+                              
+                            </div>
+                            
+                          </div>
+                    </div>
+                </div>
+            </div>
+
+        <script src="/static/js/bootstrap.js"></script>
+    </body>
+</html>

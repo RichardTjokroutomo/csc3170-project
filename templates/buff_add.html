@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/static/css/bootstrap.css">
+    </head>
+
+        
+    <body class="">
+            <div class="container-fluid mt-5">
+                <div class="row justify-content-center">
+                    <div class="col-6">
+                        <div class="card" style="width: 36rem;">
+                            <div class="card-body">
+                               <!-- FORM STARTS -->
+                               <form action="/buff_mod" method="POST">
+                                <!-- title-->
+                                <div class="mb-3">
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="buff_id"><b>Buff ID</b></label>
+                                            <input type="text" class="form-control" id="buff_id" name="buff_id" placeholder="buff_id" value="{{metadata[0]}}">
+                                        </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="buff_name"><b>Buff Name</b></label>
+                                    <input type="text" class="form-control" id="buff_name" name="buff_name" placeholder="buff_name" value="{{metadata[1]}}">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="file_addr"><b>File Location</b></label>
+                                    <input type="text" class="form-control" id="file_addr" name="file_addr" placeholder="file_addr" value="{{metadata[2]}}">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="duration"><b>Duration</b></label>
+                                    <input type="text" class="form-control" id="duration" name="duration" placeholder="duration" value="{{metadata[3]}}">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="target_limit"><b>Max Target</b></label>
+                                    <input type="text" class="form-control" id="target_limit" name="target_limit" placeholder="target_limit" value="{{metadata[4]}}">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="effect_type"><b>Effect Type</b></label>
+                                    <input type="text" class="form-control" id="effect_type" name="effect_type" placeholder="effect_type" value="{{metadata[5]}}">
+                                </div>
+                                
+                    
+                                <!-- edit-->
+                                <div class="row">
+                                    <button type="submit" class="btn btn-dark">Done</button>
+                                </div>
+        
+                                
+                              </form> 
+        
+                              <!-- delete-->
+                              <form action="buff_del?id={{metadata[0]}}" method="POST" class="mt-2">
+                                <div class="row">
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </div>
+                              </form>
+        
+                              <!-- FORM ENDS-->
+                              
+                            </div>
+                            
+                          </div>
+                    </div>
+                </div>
+            </div>
+
+        <script src="/static/js/bootstrap.js"></script>
+    </body>
+</html>

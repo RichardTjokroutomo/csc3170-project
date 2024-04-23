@@ -1,0 +1,106 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/static/css/bootstrap.css">
+    </head>
+
+        
+    <body class="">
+            <div class="container-fluid mt-5">
+                <div class="row justify-content-center">
+                    <div class="col-6">
+                        <div class="card" style="width: 36rem;">
+                            <div class="card-body">
+                               <!-- FORM STARTS -->
+                               <form action="/passive_mod" method="POST">
+                                <!-- title-->
+                                <div class="mb-3">
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="passive_id"><b>ID</b></label>
+                                            <input type="text" class="form-control" id="passive_id" name="passive_id" placeholder="id" value="{{metadata[0]}}">
+                                        </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="passive_name"><b>Name</b></label>
+                                    <input type="text" class="form-control" id="passive_name" name="passive_name" placeholder="name" value="{{metadata[1]}}">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="trigger"><b>Trigger</b></label>
+                                    <input type="text" class="form-control" id="trigger" name="trigger" rows="3" placeholder="trigger" value="{{metadata[2]}}">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="cd"><b>CD</b></label>
+                                    <input type="text" class="form-control" id="cd" name="cd" placeholder="cd" value="{{metadata[3]}}">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="usage_target"><b>Target Usage</b></label>
+                                    <input type="text" class="form-control" id="usage_target" name="usage_target" placeholder="usage_target" value="{{metadata[4]}}">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="trigger_chance"><b>Trigger Chance</b></label>
+                                    <input type="text" class="form-control" id="trigger_chance" name="trigger_chance" placeholder="trigger_chance" value="{{metadata[5]}}">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="buff_id_one"><b>Buff ID 1</b></label>
+                                    <input type="text" class="form-control" id="buff_id_one" name="buff_id_one" placeholder="buff_id_one" value="{{metadata[6]}}">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="buff_one_trigger"><b>Buff 1 Activation Chance</b></label>
+                                    <input type="text" class="form-control" id="buff_one_trigger" name="buff_one_trigger" placeholder="buff_one_trigger" value="{{metadata[7]}}">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="buff_id_two"><b>Buff ID 2</b></label>
+                                    <input type="text" class="form-control" id="buff_id_two" name="buff_id_two" placeholder="buff_id_two" value="{{metadata[8]}}">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="buff_two_trigger"><b>Buff 2 Activation Chance</b></label>
+                                    <input type="text" class="form-control" id="buff_two_trigger" name="buff_two_trigger" placeholder="buff_two_trigger" value="{{metadata[9]}}">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="buff_id_three"><b>Buff ID 3</b></label>
+                                    <input type="text" class="form-control" id="buff_id_three" name="buff_id_three" placeholder="buff_id_three" value="{{metadata[10]}}">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="buff_three_trigger"><b>Buff 3 Activation Chance</b></label>
+                                    <input type="text" class="form-control" id="buff_three_trigger" name="buff_three_trigger" placeholder="buff_three_trigger" value="{{metadata[11]}}">
+                                </div>
+
+                                
+                                <!-- edit-->
+                                <div class="row">
+                                    <button type="submit" class="btn btn-dark">Done</button>
+                                </div>
+        
+                                
+                              </form> 
+        
+                              <!-- delete-->
+                              <form action="passive_del?id={{metadata[0]}}" method="POST" class="mt-2">
+                                <div class="row">
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </div>
+                              </form>
+        
+                              <!-- FORM ENDS-->
+                              
+                            </div>
+                            
+                          </div>
+                    </div>
+                </div>
+            </div>
+
+        <script src="/static/js/bootstrap.js"></script>
+    </body>
+</html>
