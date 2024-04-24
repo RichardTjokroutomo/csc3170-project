@@ -83,7 +83,7 @@ def chara_mod():
                 
 
                 # insert
-                insert_data = "(" + dct['id'] + ", '" + dct['race'] + "', '" + dct['name'] + "', '" + dct['avatar'] + "', '" + dct['lihui'] + "', '" + dct['danju'] +  "', " + dct['hp'] + ", " + dct['atk'] + ", " + dct['spd'] + ", " + dct['rarity'] + ", " + dct["frag"] + ")"  
+                insert_data = "(" + dct['id'] + ", " + dct['race'] + ", '" + dct['name'] + "', '" + dct['avatar'] + "', '" + dct['lihui'] + "', '" + dct['danju'] +  "', " + dct['hp'] + ", " + dct['atk'] + ", " + dct['spd'] + ", " + dct['rarity'] + ", " + dct["frag"] + ")"  
                 cur.execute("INSERT INTO " + chara_table_name + " VALUES " + insert_data)
 
                 con.commit()
@@ -317,7 +317,7 @@ def buff_mod():
                 
 
                 # insert
-                insert_data = "(" + dct['buff_id'] + ", '" + dct['buff_name'] + "', '" + dct['file_addr'] + "', " + dct['duration'] + ", " + dct['target_limit'] + ", '" + dct['effect_type']+"')"  
+                insert_data = "(" + dct['buff_id'] + ", '" + dct['buff_name'] + "', '" + dct['file_addr'] + "', " + dct['duration'] + ", " + dct['target_limit'] + ", " + dct['effect_type']+")"  
                 cur.execute("INSERT INTO " + buff_table_name + " VALUES " + insert_data)
 
                 con.commit()
@@ -396,7 +396,7 @@ def passive_mod():
                 
 
                 # insert
-                insert_data = "(" + dct['passive_id'] + ", '" + dct['passive_name'] + "', '" + dct['trigger'] + "', " + dct['cd'] +  ", '" + dct['usage_target'] + "', "  + dct['trigger_chance'] + ", " + dct['buff_id_one'] + ", " + dct['buff_one_trigger'] + ", " + dct['buff_id_two'] + ", " + dct['buff_two_trigger'] + ", " + dct['buff_id_three'] + ", " + dct['buff_three_trigger'] + ")"  
+                insert_data = "(" + dct['passive_id'] + ", '" + dct['passive_name'] + "', " + dct['trigger'] + ", " + dct['cd'] +  ", " + dct['usage_target'] + ", "  + dct['trigger_chance'] + ", " + dct['buff_id_one'] + ", " + dct['buff_one_trigger'] + ", " + dct['buff_id_two'] + ", " + dct['buff_two_trigger'] + ", " + dct['buff_id_three'] + ", " + dct['buff_three_trigger'] + ")"  
                 #print(insert_data)
                 cur.execute("INSERT INTO " + passive_table_name + " VALUES " + insert_data)
 
@@ -443,7 +443,7 @@ def active_add():
                 res = cur.fetchone()
                 if not res:
                     res = [-1]
-                active_data =  [str(int(res[0])+1), "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",  "", ""]
+                active_data =  [str(int(res[0])+1), "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",  "", "", "", "", "", "", "", "", ""]
                 
         else:
             with sqlite3.connect(db_url) as con:
@@ -454,7 +454,7 @@ def active_add():
 
         # fetch the data of  the chara
         res_data = []
-        for i in range(19):
+        for i in range(26):
             res_data.append(active_data[i])
         
 
@@ -477,9 +477,9 @@ def active_mod():
                 # insert
                 insert_data = ""
 
-                insert_data += "(" + dct['active_id'] + ", '" + dct['active_name'] + "', '" + dct['skill_url'] + "', '" + dct['release_method'] + "', " + dct['aim_id'] + ", '" + dct['active_file_addr'] + "', " + dct['cd'] + ", "
-                insert_data += dct['buff_id_one'] + ", " + dct['buff_one_trigger'] + ", " + dct['buff_id_two'] + ", " + dct['buff_two_trigger'] + ", " + dct['buff_id_three'] + ", " + dct['buff_three_trigger'] + ", "
-                insert_data += dct['skill_eff_one_rate'] + ", " + dct['skill_one_id'] + ", " + dct['skill_eff_two_rate'] + ", " + dct['skill_two_id'] + ", " + dct['skill_eff_three_rate'] + ", " + dct['skill_three_id'] + ") "
+                insert_data += "(" + dct['active_id'] + ", '" + dct['active_name'] + "', '" + dct['skill_url'] + "', " + dct['skill_slot'] + ", "+ dct['release_method'] + ", " + dct['aim_id'] + ", '" + dct['active_file_addr'] + "', " + dct['cd'] + ", "
+                insert_data += "'" + dct['buff_one_name'] + "', " + dct['buff_id_one'] + ", " + dct['buff_one_trigger'] + ", " + "'" + dct['buff_two_name'] + "', " + dct['buff_id_two'] + ", " + dct['buff_two_trigger'] + ", " + "'" + dct['buff_three_name'] + "', " + dct['buff_id_three'] + ", " + dct['buff_three_trigger'] + ", "
+                insert_data += "'" + dct['eff_one_name'] + "', " + dct['skill_eff_one_rate'] + ", " + dct['skill_one_id'] + ", " + "'" + dct['eff_two_name'] + "', " + dct['skill_eff_two_rate'] + ", " + dct['skill_two_id'] + ", " + "'" + dct['eff_three_name'] + "', " + dct['skill_eff_three_rate'] + ", " + dct['skill_three_id'] + ") "
                 print(insert_data)
                 cur.execute("INSERT INTO " + active_table_name + " VALUES " + insert_data)
 
